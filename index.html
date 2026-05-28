@@ -8,10 +8,16 @@
 
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    
+    <!-- Google Fonts: Poppins para el texto, JetBrains Mono para la terminal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">    
 </head>
 <body>
     
-    <!--Navbar-->
+    <!-- =============================================
+         NAVBAR — barra de navegación fija arriba
+    ================================================ -->
     <header>
         <nav class="navbar">
             <div class="logo">David.</div>
@@ -25,11 +31,13 @@
         </nav>
     </header>
 
-    <!--Hero (inicio)-->
+    <!-- =============================================
+         HERO — sección de presentación principal
+    ================================================ -->
     <section class="hero" id="inicio">
         <div class="hero-content" data-aos="fade-up">
             <div class="hero-text" data-aos="fade-right">
-                <p class="hero-subtitle">DESARROLLADOR WEB</p>
+                <p class="hero-subtitle">// DESARROLLADOR WEB</p>
                 <h1>Hola, soy David</h1>
                 <p>Desarrollador de software apasionado por la tecnología, el crecimiento personal y la disciplina.</p>
                 <a href="#proyectos" class="btn">Ver proyectos</a>
@@ -42,7 +50,9 @@
         </div>
     </section>
 
-    <!--Sobre mí-->
+    <!-- =============================================
+         SOBRE MÍ
+    ================================================ -->
     <section class="about" id="sobre-mi">
         <div class="about-content" data-aos="fade-right">
             <h2>Sobre mí</h2>
@@ -54,57 +64,145 @@
         </div>
     </section>
 
-    <!--Proyectos-->
-    <section class="projects" id="proyectos">
+    <!-- =============================================
+         PROYECTOS — sección tipo terminal
+    ================================================ -->
+    <section class="projects" id="proyectos" data-aos="fade-up">
 
         <h2>Proyectos</h2>
-
-        <div class="projects-container">
-
-            <!-- Proyecto 1 -->
-            <div class="project-card" data-aos="zoom-in">
-                <h3>SembrApp</h3>
-                <p>
-                    Proyecto enfocado en agricultores Colombianos con predcción climática y calendario de cultivos.
-                </p>
-
-                <a href="#">Ver proyecto</a>
+        <!-- Ventana de terminal -->
+        <div class="terminal-window">
+ 
+            <!-- Barra superior con los 3 puntos (rojo, amarillo, verde) -->
+            <div class="terminal-bar">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+                <span class="terminal-title">david@portfolio ~ projects</span>
             </div>
-
-            <!-- Proyecto 2 -->
-            <div class="project-card" data-aos="fade-up">
-                <h3>Seminario big data</h3>
-                <p>
-                    Seminario big data como proyecto de grado, con el objetivo de analizar datos de redes sociales para obtener insights sobre tendencias y comportamientos.
-                </p>
-
-                <a href="#">Ver certificado</a>
-            </div>
-
-             <!-- Proyecto 3 -->
-             <div class="project-card" data-aos="flip-left">
-                <h3>Portafolio Personal</h3>
-                <p>
-                    Mi portafolio personal desarrollado con HTML, CSS y JavaScript.
-                </p>
+ 
+            <!-- Cuerpo de la terminal -->
+            <div class="terminal-body">
+ 
+                <!-- Línea de comando simulada -->
+                <div class="terminal-prompt">
+                    <span class="path">~/projects</span>
+                    <span> $ </span>
+                    <span class="cmd">ls -la --featured</span>
+                </div>
+ 
+                <!-- PROYECTO 1 -->
+                <div class="project-entry" id="proj-1">
+                    <div class="project-header">
+                        <span class="project-index">[01]</span>
+                        <span class="project-name">SembrApp</span>
+                        <span class="project-tag">Mobile App</span>
+                    </div>
+                    <p class="project-desc">
+                        Solución para agricultores colombianos con predicción
+                        climática y calendario de cultivos inteligente.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">API Climática</span>
+                    </div>
+                    <!--
+                        Reemplaza el # del href con el link real
+                        de tu proyecto cuando lo tengas
+                    -->
+                    <a href="#" class="project-link">Ver proyecto</a>
+                </div>
+ 
+                <!-- PROYECTO 2 -->
+                <div class="project-entry" id="proj-2">
+                    <div class="project-header">
+                        <span class="project-index">[02]</span>
+                        <span class="project-name">Seminario Big Data</span>
+                        <span class="project-tag">Data Science</span>
+                    </div>
+                    <p class="project-desc">
+                        Proyecto de grado: análisis de redes sociales para
+                        extraer insights sobre tendencias y comportamientos.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Visualización</span>
+                    </div>
+                    <a href="#" class="project-link">Ver certificado</a>
+                </div>
+ 
+                <!-- PROYECTO 3 -->
+                <div class="project-entry" id="proj-3">
+                    <div class="project-header">
+                        <span class="project-index">[03]</span>
+                        <span class="project-name">Portafolio Personal</span>
+                        <span class="project-tag">Web</span>
+                    </div>
+                    <p class="project-desc">
+                        Este mismo sitio — diseñado y desarrollado desde cero
+                        con foco en experiencia de usuario y detalles visuales.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">Estás aquí</a>
+                </div>
+ 
+                <!-- Cursor parpadeante al final -->
+                <div class="terminal-footer">
+                    <span class="path">~/projects</span> $
+                    <span class="terminal-cursor"></span>
+                </div>
+ 
             </div>
         </div>
     </section>
 
-    <!--Contacto-->
-    <footer id="contacto">
+    <!-- =============================================
+         CONTACTO / FOOTER
+    ================================================ -->
+    <footer id="contacto" data-aos="fade-up">
         <h2>Contacto</h2>
-
-        <p>Email: davidemmanuelm970@gmail.com</p>
-
-        <p>Instagram: @mury_ef</p>
-
-        <p>GitHub: github.com/MurilloDavidR</p>
+ 
+        <div class="contact-grid">
+ 
+            <!-- Cada .contact-item es un enlace clicable -->
+            <a href="mailto:davidemmanuelm970@gmail.com" class="contact-item">
+                <span class="contact-icon">✉</span>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">davidemmanuelm970@gmail.com</span>
+            </a>
+ 
+            <a href="https://instagram.com/mury_ef" target="_blank" class="contact-item">
+                <span class="contact-icon">◈</span>
+                <span class="contact-label">Instagram</span>
+                <span class="contact-value">@mury_ef</span>
+            </a>
+ 
+            <a href="https://github.com/MurilloDavidR" target="_blank" class="contact-item">
+                <span class="contact-icon">⌥</span>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">MurilloDavidR</span>
+            </a>
+ 
+        </div>
+ 
+        <!--
+            El <span id="year"> lo rellena el JS automáticamente
+            con el año actual. No tienes que cambiarlo nunca.
+        -->
+        <p class="footer-copy">© David <span id="year"></span></p>
     </footer>
-
-    <!-- AOS JS -->
+ 
+    <!-- =============================================
+         SCRIPTS — siempre al final del <body>
+         El orden importa: primero AOS, luego el tuyo
+    ================================================ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!--Enlace a JS-->
     <script src="js/script.js"></script>
 </body>
 </html>
