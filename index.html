@@ -125,12 +125,7 @@
                         Proyecto de grado: análisis de redes sociales para
                         extraer insights sobre tendencias y comportamientos.
                     </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Pandas</span>
-                        <span class="tech-badge">Visualización</span>
-                    </div>
-                    <a href="#" class="project-link">Ver certificado</a>
+                    <button onclick="abrirModal()" class="project-link project-link-btn">Ver certificado</button>
                 </div>
  
                 <!-- PROYECTO 3 -->
@@ -161,6 +156,43 @@
             </div>
         </div>
     </section>
+
+    <!-- =============================================
+         MODAL — ventana del certificado Big Data
+         Empieza oculto (display:none en el CSS)
+         El JS lo hace visible al hacer clic
+    ================================================-->
+    <div class="modal-overlay" id="modalCertificado">
+ 
+        <!-- Caja blanca del centro -->
+        <div class="modal-box">
+ 
+            <!-- Botón X para cerrar -->
+            <button class="modal-close" onclick="cerrarModal()">✕</button>
+ 
+            <h3 class="modal-title">Seminario Big Data</h3>
+            <p class="modal-subtitle">Proyecto de grado — Certificado oficial</p>
+ 
+            <!--
+                El iframe muestra el PDF adentro de la ventana.
+                Cambia "docs/certificado-bigdata.pdf" por el nombre
+                exacto de tu archivo dentro de la carpeta docs/
+            -->
+            <iframe
+                src="docs/certificado-bigdata.pdf"
+                class="modal-iframe"
+                title="Certificado Seminario Big Data">
+            </iframe>
+ 
+            <!-- Botón para descargar el PDF -->
+            <a href="docs/certificado-bigdata.pdf"
+               download
+               class="modal-download">
+               ↓ Descargar certificado
+            </a>
+ 
+        </div>
+    </div>
 
     <!-- =============================================
          CONTACTO / FOOTER

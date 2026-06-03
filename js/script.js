@@ -142,7 +142,40 @@ const projectObserver = new IntersectionObserver((entries) => {
 projectEntries.forEach(entry => projectObserver.observe(entry));
  
  
-// ── 7. AÑO DINÁMICO en el footer
+// ── 8. MODAL DEL CERTIFICADO
+// Selecciona la capa oscura del modal
+const modal = document.getElementById("modalCertificado");
+ 
+// abrirModal() → hace visible el modal
+function abrirModal() {
+    modal.classList.add("visible");
+    // Bloquea el scroll de la página mientras el modal está abierto
+    document.body.style.overflow = "hidden";
+}
+ 
+// cerrarModal() → oculta el modal
+function cerrarModal() {
+    modal.classList.remove("visible");
+    // Restaura el scroll de la página
+    document.body.style.overflow = "";
+}
+ 
+// Si el usuario hace clic en el fondo oscuro (fuera de la caja),
+// también cierra el modal
+modal.addEventListener("click", (e) => {
+    // e.target es el elemento que recibió el clic
+    // Si es el overlay (fondo) y no la caja interior, cierra
+    if (e.target === modal) {
+        cerrarModal();
+    }
+});
+ 
+// Si el usuario presiona la tecla Escape, cierra el modal
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        cerrarModal();
+    }
+});
 // Busca el elemento con id="year" en el HTML
 const yearSpan = document.getElementById("year");
  
