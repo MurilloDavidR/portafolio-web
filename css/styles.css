@@ -580,3 +580,10 @@ footer h2 {
     font-family: 'JetBrains Mono', monospace;
     padding-left: 28px;
 }
+ 
+/* Fila con varios botones de acción en un proyecto */
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}

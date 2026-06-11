@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David | Portafolio</title>
-    <link rel="stylesheet" href="css/styles.css">
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-    
     <!-- Google Fonts: Poppins para el texto, JetBrains Mono para la terminal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- AOS: librería de animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+    <!-- Tu hoja de estilos (siempre al final de los <link>) -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+
     <!-- =============================================
          NAVBAR — barra de navegación fija arriba
     ================================================ -->
@@ -22,12 +24,12 @@
         <nav class="navbar">
             <div class="logo">David.</div>
 
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -36,17 +38,30 @@
     ================================================ -->
     <section class="hero" id="inicio">
         <div class="hero-content" data-aos="fade-up">
+
+            <!-- Texto del lado izquierdo -->
             <div class="hero-text" data-aos="fade-right">
-                <p class="hero-subtitle">// DESARROLLADOR WEB</p>
+                <!--
+                    .hero-subtitle: el JS va a escribir este texto
+                    letra por letra (efecto de máquina de escribir)
+                -->
+                <p class="hero-subtitle">// DESARROLLADOR WEB & MOBILE</p>
                 <h1>Hola, soy David</h1>
-                <p>Desarrollador de software apasionado por la tecnología, el crecimiento personal y la disciplina.</p>
+                <p>Desarrollador de software apasionado por la tecnología,
+                   el crecimiento personal y la disciplina.</p>
                 <a href="#proyectos" class="btn">Ver proyectos</a>
             </div>
-            <!--imagen de perfil-->
+
+            <!-- Foto del lado derecho -->
             <div class="hero-image" data-aos="fade-left">
-                <div class="image-glow">></div>
-                <img src="img/Mury.png" alt="Foto de perfil">
+                <div class="image-glow"></div>
+                <!--
+                    Asegúrate de que tu foto se llame Mury.png
+                    y esté dentro de la carpeta img/
+                -->
+                <img src="img/Mury.png" alt="Foto de perfil de David">
             </div>
+
         </div>
     </section>
 
@@ -68,11 +83,11 @@
          PROYECTOS — sección tipo terminal
     ================================================ -->
     <section class="projects" id="proyectos" data-aos="fade-up">
-
         <h2>Proyectos</h2>
+
         <!-- Ventana de terminal -->
         <div class="terminal-window">
- 
+
             <!-- Barra superior con los 3 puntos (rojo, amarillo, verde) -->
             <div class="terminal-bar">
                 <span class="terminal-dot dot-red"></span>
@@ -80,17 +95,17 @@
                 <span class="terminal-dot dot-green"></span>
                 <span class="terminal-title">david@portfolio ~ projects</span>
             </div>
- 
+
             <!-- Cuerpo de la terminal -->
             <div class="terminal-body">
- 
+
                 <!-- Línea de comando simulada -->
                 <div class="terminal-prompt">
                     <span class="path">~/projects</span>
                     <span> $ </span>
                     <span class="cmd">ls -la --featured</span>
                 </div>
- 
+
                 <!-- PROYECTO 1 -->
                 <div class="project-entry" id="proj-1">
                     <div class="project-header">
@@ -113,7 +128,7 @@
                     -->
                     <a href="#" class="project-link">Ver proyecto</a>
                 </div>
- 
+
                 <!-- PROYECTO 2 -->
                 <div class="project-entry" id="proj-2">
                     <div class="project-header">
@@ -125,9 +140,18 @@
                         Proyecto de grado: análisis de redes sociales para
                         extraer insights sobre tendencias y comportamientos.
                     </p>
-                    <button onclick="abrirModal()" class="project-link project-link-btn">Ver certificado</button>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pandas</span>
+                        <span class="tech-badge">Visualización</span>
+                    </div>
+                    <!-- Dos botones: uno por documento -->
+                    <div class="project-actions">
+                        <button onclick="abrirModal('modalCertificado')" class="project-link project-link-btn">Ver certificado</button>
+                        <button onclick="abrirModal('modalDiploma')" class="project-link project-link-btn">Ver diploma</button>
+                    </div>
                 </div>
- 
+
                 <!-- PROYECTO 3 -->
                 <div class="project-entry" id="proj-3">
                     <div class="project-header">
@@ -146,51 +170,46 @@
                     </div>
                     <a href="#" class="project-link">Estás aquí</a>
                 </div>
- 
+
                 <!-- Cursor parpadeante al final -->
                 <div class="terminal-footer">
                     <span class="path">~/projects</span> $
                     <span class="terminal-cursor"></span>
                 </div>
- 
+
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         MODAL — ventana del certificado Big Data
-         Empieza oculto (display:none en el CSS)
-         El JS lo hace visible al hacer clic
-    ================================================-->
+    <!-- MODAL CERTIFICADO BIG DATA -->
     <div class="modal-overlay" id="modalCertificado">
- 
-        <!-- Caja blanca del centro -->
         <div class="modal-box">
- 
-            <!-- Botón X para cerrar -->
-            <button class="modal-close" onclick="cerrarModal()">✕</button>
- 
+            <button class="modal-close" onclick="cerrarModal('modalCertificado')">✕</button>
             <h3 class="modal-title">Seminario Big Data</h3>
             <p class="modal-subtitle">Proyecto de grado — Certificado oficial</p>
- 
-            <!--
-                El iframe muestra el PDF adentro de la ventana.
-                Cambia "docs/certificado-bigdata.pdf" por el nombre
-                exacto de tu archivo dentro de la carpeta docs/
-            -->
             <iframe
-                src="docs/certificado-bigdata.pdf"
+                src="https://drive.google.com/file/d/1nmyj77KfaZPuEyF3Nasihx_eTBNrAFZD/preview"
                 class="modal-iframe"
-                title="Certificado Seminario Big Data">
+                title="Certificado Seminario Big Data"
+                allow="autoplay">
             </iframe>
- 
-            <!-- Botón para descargar el PDF -->
-            <a href="docs/certificado-bigdata.pdf"
-               download
-               class="modal-download">
-               ↓ Descargar certificado
-            </a>
- 
+            <a href="https://drive.google.com/file/d/1nmyj77KfaZPuEyF3Nasihx_eTBNrAFZD/view?usp=sharing" target="_blank" class="modal-download">↓ Abrir en Google Drive</a>
+        </div>
+    </div>
+
+    <!-- MODAL DIPLOMA -->
+    <div class="modal-overlay" id="modalDiploma">
+        <div class="modal-box">
+            <button class="modal-close" onclick="cerrarModal('modalDiploma')">✕</button>
+            <h3 class="modal-title">Diploma de Grado</h3>
+            <p class="modal-subtitle">Tecnología en Desarrollo de Software</p>
+            <iframe
+                src="https://drive.google.com/file/d/1ATCfZ3JD3nVaGJRWeRMqBi38xUwxRmQF/preview"
+                class="modal-iframe"
+                title="Diploma de Grado"
+                allow="autoplay">
+            </iframe>
+            <a href="https://drive.google.com/file/d/1ATCfZ3JD3nVaGJRWeRMqBi38xUwxRmQF/view?usp=drive_link"target="_blank" class="modal-download">↓ Abrir en Google Drive</a>
         </div>
     </div>
 
@@ -199,42 +218,43 @@
     ================================================ -->
     <footer id="contacto" data-aos="fade-up">
         <h2>Contacto</h2>
- 
+
         <div class="contact-grid">
- 
+
             <!-- Cada .contact-item es un enlace clicable -->
             <a href="mailto:davidemmanuelm970@gmail.com" class="contact-item">
                 <span class="contact-icon">✉</span>
                 <span class="contact-label">Email</span>
                 <span class="contact-value">davidemmanuelm970@gmail.com</span>
             </a>
- 
+
             <a href="https://instagram.com/mury_ef" target="_blank" class="contact-item">
                 <span class="contact-icon">◈</span>
                 <span class="contact-label">Instagram</span>
                 <span class="contact-value">@mury_ef</span>
             </a>
- 
+
             <a href="https://github.com/MurilloDavidR" target="_blank" class="contact-item">
                 <span class="contact-icon">⌥</span>
                 <span class="contact-label">GitHub</span>
                 <span class="contact-value">MurilloDavidR</span>
             </a>
- 
+
         </div>
- 
+
         <!--
             El <span id="year"> lo rellena el JS automáticamente
             con el año actual. No tienes que cambiarlo nunca.
         -->
         <p class="footer-copy">© David <span id="year"></span></p>
     </footer>
- 
+
     <!-- =============================================
          SCRIPTS — siempre al final del <body>
          El orden importa: primero AOS, luego el tuyo
     ================================================ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
+
 </body>
 </html>
