@@ -112,47 +112,28 @@ if (typingTarget) {
 }
 
 
-// ── 6. PROYECTOS: aparecer en cascada al hacer scroll
+// ── 6. PROYECTOS: animación solo en pantallas grandes
+// En móvil ya son visibles por CSS, no necesitan JS
 const projectEntries = document.querySelectorAll(".project-entry");
 
-// En móvil el threshold alto puede hacer que nunca dispare
-// porque el elemento ocupa casi toda la pantalla.
-// Usamos 0.05 (solo necesita estar 5% visible) y un rootMargin
-// generoso para que detecte antes de que entre completamente.
-const projectObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const num = parseInt(entry.target.id.split("-")[1]);
-            const delay = num * 180;
+if (window.innerWidth >= 769) {
+    // Agrega la clase que los oculta inicialmente
+    projectEntries.forEach(entry => entry.classList.add("animate"));
 
-            setTimeout(() => {
-                entry.target.classList.add("visible");
-            }, delay);
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const num = parseInt(entry.target.id.split("-")[1]);
+                setTimeout(() => {
+                    entry.target.classList.add("visible");
+                }, num * 180);
+                projectObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.05 });
 
-            projectObserver.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.05,         // solo necesita estar 5% visible
-    rootMargin: "0px 0px -50px 0px"  // dispara 50px antes del borde inferior
-});
-
-projectEntries.forEach(entry => projectObserver.observe(entry));
-
-// Seguro adicional: si el usuario ya está en la sección
-// cuando carga la página (frecuente en móvil al recargar),
-// hace visibles los proyectos directamente sin esperar scroll.
-window.addEventListener("load", () => {
-    projectEntries.forEach((entry, i) => {
-        const rect = entry.getBoundingClientRect();
-        // Si el elemento ya está en pantalla al cargar
-        if (rect.top < window.innerHeight) {
-            setTimeout(() => {
-                entry.classList.add("visible");
-            }, i * 180);
-        }
-    });
-});
+    projectEntries.forEach(entry => projectObserver.observe(entry));
+}
 
 
 // ── 8. MODALES (certificado y diploma)
