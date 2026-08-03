@@ -4,6 +4,7 @@
           Sobre mí → Proyectos → Footer → Responsive
 ================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 /* ── RESET
    Quita márgenes y paddings que los navegadores
@@ -105,14 +106,13 @@ body {
 }
 
 /* El subtítulo donde el JS escribe letra por letra */
-.hero-subtitle {
+.hero-content .hero-subtitle {
     color: #0A45CC;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    /* El JS agrega un border-right para simular el cursor */
 }
 
 .hero-content h1 {
@@ -305,7 +305,7 @@ body {
 }
 
 .project-index { color: #0A45CC; font-weight: 700; }
-.project-name  { color: #ffffff; font-weight: 700; font-size: 1rem; }
+.project-name  { color: #ffffff; font-weight: 700; font-size: 1rem; font-family: 'Archivo Black', sans-serif; }
 
 .project-tag {
     font-size: 0.72rem;
