@@ -153,10 +153,13 @@ body {
 
 .hero-image img {
     width: 350px;
-    border-radius: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
     position: relative;
     z-index: 2;
-}
+} 
 
 /* Halo de luz detrás de la foto */
 .image-glow {
@@ -168,6 +171,11 @@ body {
     filter: blur(120px);
     opacity: 0.3;
     z-index: 1;
+}
+
+.hero-image:hover .image-glow {
+    opacity: 0.6;
+    filter: blur(200px);
 }
 
 
