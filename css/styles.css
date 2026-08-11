@@ -4,6 +4,7 @@
           Sobre mí → Proyectos → Footer → Responsive
 ================================================ */
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 /* ── RESET
@@ -424,7 +425,11 @@ footer h2 {
 
 .contact-item:hover { color: #0A45CC; }
 
-.contact-icon  { font-size: 1.6rem; }
+.contact-icon  { 
+    font-size: 1.3rem;
+    line-height: 1;
+    display: block;
+}
 .contact-label { font-size: 0.75rem; letter-spacing: 1px; color: #555; text-transform: uppercase; }
 .contact-value { font-size: 0.95rem; }
 
@@ -599,4 +604,27 @@ footer h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+}
+
+/* ── BOTÓN DE MÚSICA
+------------------------------------------------ */
+.music-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0A45CC;
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.music-btn:hover {
+    background: #2D66ED;
+    transform: scale(1.1);
 }

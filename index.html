@@ -140,7 +140,7 @@
                         Reemplaza el # del href con el link real
                         de tu proyecto cuando lo tengas
                     -->
-                    <a href="#" class="project-link">Ver proyecto</a>
+                    <a href="#" class="project-link">Ver proyecto(No disponible)</a>
                 </div>
 
                 <!-- PROYECTO 3 -->
@@ -191,6 +191,26 @@
                     </div>
                 </div>
 
+                <!-- PROYECTO 5 -->
+                <div class="project-entry" id="proj-5">
+                    <div class="project-header">
+                        <span class="project-index">V</span>
+                        <span class="project-name">(demo) asistente con IA para 4dsoftware</span>
+                        <span class="project-tag">Web App</span>
+                    </div>
+                    <p class="project-desc">
+                        Asistente de inteligencia artificial para la empresa 4dsoftware (solo demostración, no es un producto final)
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href=" https://murillodavidr.github.io/asistente-leads-4d" target="_blank" class="project-link project-link-btn">Ver demo</a>
+                        <a href="https://github.com/MurilloDavidR/asistente-leads-4d" target="_blank" class="project-link project-link-btn">Ver código</a>
+                    </div>
+                </div>
                 <!-- Cursor parpadeante al final -->
                 <div class="terminal-footer">
                     <span class="path">~/projects</span> $
@@ -255,7 +275,7 @@
             </a>
 
             <a href="https://instagram.com/mury_fm" target="_blank" class="contact-item">
-                <span class="contact-icon">◈</span>
+                <i class="fa-brands fa-instagram contact-icon"></i>
                 <span class="contact-label">Instagram</span>
                 <span class="contact-value">@mury_fm</span>
             </a>
@@ -265,7 +285,6 @@
                 <span class="contact-label">GitHub</span>
                 <span class="contact-value">MurilloDavidR</span>
             </a>
-
         </div>
 
         <!--
@@ -274,6 +293,12 @@
         -->
         <p class="footer-copy">© David <span id="year"></span></p>
     </footer>
+
+    <audio id="bg-music" loop>
+        <source src="audio/fondo.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" class="music-btn" aria-label="Reproducir música">🔇</button>
 
     <!-- =============================================
          SCRIPTS — siempre al final del <body>

@@ -181,3 +181,19 @@ if (yearSpan) {
     // Así no tienes que cambiarlo nunca manualmente
     yearSpan.textContent = new Date().getFullYear();
 }
+
+// ── 9. BOTÓN DE MÚSICA DE FONDO ──
+const bgMusic = document.getElementById("bg-music");
+const musicBtn = document.getElementById("music-toggle");
+
+bgMusic.volume = 0.3; // volumen bajito, ajústalo a tu gusto
+
+musicBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.textContent = "🔊";
+    } else {
+        bgMusic.pause();
+        musicBtn.textContent = "🔇";
+    }
+});
